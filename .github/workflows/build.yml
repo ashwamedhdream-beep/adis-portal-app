@@ -5,17 +5,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Install Tools
-        run: npm install
+        run: |
+          npm install
+          npm install @capacitor/assets
+
+      # This part creates the icon and splash screen from your 'assets' folder
+      - name: Generate App Assets
+        run: npx @capacitor/assets generate --android
+
       - name: Prepare Android
         run: |
           npx cap add android
           npx cap sync
+
       - name: Create APK
         run: cd android && ./gradlew assembleDebug
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
