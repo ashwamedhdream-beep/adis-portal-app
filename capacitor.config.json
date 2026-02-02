@@ -2,5 +2,8 @@
   "appId": "com.adis.portal",
   "appName": "ADIS Portal",
   "webDir": "www",
-  "bundledWebRuntime": false
+  "server": {
+    "url": "https://ashwamedhdream-beep.github.io/adis-portal-app/",
+    "cleartext": true
+  }
 }
