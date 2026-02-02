@@ -1,0 +1,6 @@
+{
+  "appId": "com.adis.portal",
+  "appName": "ADIS Portal",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
