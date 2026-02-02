@@ -17,7 +17,7 @@ jobs:
 
       # This part creates the icon and splash screen from your 'assets' folder
       - name: Generate App Assets
-        run: npx @capacitor/assets generate --android
+        run: npx @capacitor/assets generate --android --assetPath assets
 
       - name: Prepare Android
         run: |
